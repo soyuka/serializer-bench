@@ -15,9 +15,13 @@ namespace Soyuka\Dto;
 
 use Symfony\Component\Marshaller\Attribute\Name;
 
+/**
+ * @template T
+ */
 final class Collection implements \IteratorAggregate
 {
     #[Name('hydra:member')]
+    /** @var array<int, T> */
     public array $collection;
 
     #[Name('@type')]
